@@ -162,3 +162,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 homework-1/.vscode/settings.json
+homework-2/.vscode/settings.json
