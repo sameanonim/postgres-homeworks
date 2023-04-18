@@ -32,5 +32,5 @@ JOIN employees e ON c.country = e.country
 
 -- 7. страны, в которых зарегистрированы и заказчики (customers) и поставщики (suppliers), но не зарегистрированы работники (employees).
 SELECT DISTINCT c.country FROM customers c
-JOIN suppliers s ON c.country = s.country
-WHERE c.country NOT IN (SELECT country FROM employees)
+INTERSECT SELECT DISTINCT s.country FROM suppliers s
+EXCEPT SELECT DISTINCT e.country FROM employees e
