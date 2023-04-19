@@ -27,8 +27,8 @@ ORDER BY total_freight DESC
 
 -- 6. страны, в которых зарегистрированы и заказчики (customers) и поставщики (suppliers) и работники (employees).
 SELECT DISTINCT c.country FROM customers c
-JOIN suppliers s ON c.country = s.country
-JOIN employees e ON c.country = e.country
+INTERSECT SELECT DISTINCT country FROM suppliers
+INTERSECT SELECT DISTINCT country FROM employees
 
 -- 7. страны, в которых зарегистрированы и заказчики (customers) и поставщики (suppliers), но не зарегистрированы работники (employees).
 SELECT DISTINCT c.country FROM customers c
